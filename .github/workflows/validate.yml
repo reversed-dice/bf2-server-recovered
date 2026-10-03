@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   validate:
-    runs-on: [self-hosted, vps, validate]
+    runs-on: [self-hosted, rd, validate]
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -53,7 +53,7 @@ jobs:
           tag=$(cat /srv/reversed-dice/worker/current_tag)
           # shellcheck disable=SC2046
           docker run --rm --network rd-internal --env-file /srv/reversed-dice/worker/.env \
-            -v /home/debian/toolchains:/toolchains:ro -v "$PWD":/src:ro -w /src \
+            -v /srv/reversed-dice/toolchains:/toolchains:ro -v "$PWD":/src:ro -w /src \
             --read-only --tmpfs /tmp --cap-drop ALL --cap-add SETUID --cap-add SETGID \
             --security-opt no-new-privileges:true -e RD_COMPILE_UID=65534 \
             --entrypoint /api "rd-worker:$tag" validate $(cat files.txt) 2>&1 | tee result.txt
