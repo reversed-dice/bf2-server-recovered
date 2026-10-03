@@ -1,0 +1,11 @@
+// FUNCTION: BF2 0x599690
+namespace dice { namespace hfe { namespace world {
+struct EmitPos_0x599690 { int a; float b; float c; unsigned char d; };
+void set_0x599690(void* p, int a, float b, float c, unsigned char d) {
+    EmitPos_0x599690* e = (EmitPos_0x599690*)((char*)p + 0x4c8);
+    e->a = a; e->b = b; e->c = c; e->d = d;
+}
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_EmitterTemplate_setRotationalSpeedInDof_dice_hfe_ContRandDist_float_float_bool (0x599690)
+
+// re-trigger validate

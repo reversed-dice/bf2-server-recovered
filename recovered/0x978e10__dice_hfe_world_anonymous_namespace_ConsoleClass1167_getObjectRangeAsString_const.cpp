@@ -1,0 +1,17 @@
+// FUNCTION: BF2 0x978e10
+#include <string>
+
+struct PairGap_978e10 {
+    std::string first;
+    long _pad;
+    std::string second;
+};
+
+extern "C" void std_pair_std_string_std_string_pair_std_string_constref_std_string_constref(void*, std::string*, std::string*);
+
+extern "C" void* getObjectRangeAsString_978e10(void* param_1) {
+    PairGap_978e10 result;
+    std_pair_std_string_std_string_pair_std_string_constref_std_string_constref(param_1, &result.second, &result.first);
+    return param_1;
+}
+// REVERSED_FUNCTION: dice_hfe_world_anonymous_namespace_ConsoleClass1167_getObjectRangeAsString_const (0x978e10)

@@ -1,0 +1,13 @@
+// FUNCTION: BF2 0x7d99c0
+// std::_Deque_base<bool, std::allocator<bool> >
+
+#include <map>
+#include <set>
+#include <vector>
+#include <deque>
+#include <list>
+#include <string>
+#include <algorithm>
+#include <utility>
+
+template class std::_Deque_base<bool, std::allocator<bool> >;

@@ -1,0 +1,5 @@
+// FUNCTION: BF2 0xaf8000
+namespace dice { namespace hfe { namespace world {
+unsigned int get_0xaf8000(void*) { return 0; }
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_anonymous_namespace_ConsoleClass182_objectHasRange_const (0xaf8000)

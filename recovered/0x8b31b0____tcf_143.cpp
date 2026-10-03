@@ -1,0 +1,9 @@
+// FUNCTION: BF2 0x8b31b0
+namespace dice { namespace hfe {
+extern void fn_0x00756000(void* p);
+void tcf_8b31b0() {
+    void* g = (void*)0x10e9560;
+    *(void**)0x010e9560 = (void*)0xbdf7d0;
+    fn_0x00756000(g);
+}
+} }

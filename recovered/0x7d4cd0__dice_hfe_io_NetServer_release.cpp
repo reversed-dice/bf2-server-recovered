@@ -1,0 +1,9 @@
+// FUNCTION: BF2 0x7d4cd0
+extern "C" int release_7d4cd0(char* self) {
+    int n = *(int*)(self + 8) - 1;
+    *(int*)(self + 8) = n;
+    if (n != 0) return n;
+    if (self != 0) (*(void (**)(void*))(*(char**)self + 0x128))(self);
+    return n;
+}
+// REVERSED_FUNCTION: dice_hfe_io_NetServer_release (0x7d4cd0)

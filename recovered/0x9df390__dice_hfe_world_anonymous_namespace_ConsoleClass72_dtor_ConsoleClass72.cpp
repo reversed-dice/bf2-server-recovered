@@ -1,0 +1,9 @@
+// FUNCTION: BF2 0x9df390
+namespace dice { namespace hfe { namespace world {
+extern void func_0x00756000(void*);
+void dtor_0x9df390(void* p) {
+    *(void**)p = (void*)0xc2c1f0;
+    func_0x00756000(p);
+}
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_anonymous_namespace_ConsoleClass72_dtor_ConsoleClass72 (0x9df390)

@@ -1,0 +1,9 @@
+// FUNCTION: BF2 0x5bf930
+extern "C" int release_5bf930(char* self) {
+    int n = *(int*)(self + 8) - 1;
+    *(int*)(self + 8) = n;
+    if (n != 0) return n;
+    if (self != 0) (*(void (**)(void*))(*(char**)self + 0xd8))(self);
+    return n;
+}
+// REVERSED_FUNCTION: dice_hfe_world_VehicleHudComp_release (0x5bf930)

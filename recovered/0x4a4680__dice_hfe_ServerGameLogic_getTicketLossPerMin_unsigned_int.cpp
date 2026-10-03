@@ -1,0 +1,9 @@
+// FUNCTION: BF2 0x4a4680
+extern "C" float getTicketLossPerMin_4a4680(long param_1, unsigned int param_2) {
+    if ((param_2 - 1) > 1) {
+        unsigned int bits = 0xbf800000;
+        return *(float*)&bits;
+    }
+    return *(float*)(param_1 + 0x4cc + (unsigned long)(param_2 - 1) * 4);
+}
+// REVERSED_FUNCTION: dice_hfe_ServerGameLogic_getTicketLossPerMin_unsigned_int (0x4a4680)

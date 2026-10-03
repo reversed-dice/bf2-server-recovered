@@ -1,0 +1,19 @@
+// FUNCTION: BF2 0x609520
+void fn_0x609520(void* self) {
+    char* p = (char*)self;
+    *(long*)(p+0x0) = 0xb77b90;
+    *(long*)(p+0x8) = 0xb77c08;
+    *(int*)(p+0x10) = 0x1;
+    *(int*)(p+0x14) = 0x40;
+    *(long*)(p+0x18) = 0xf6c6e8;
+    *(long*)(p+0x30) = 0xf6c6e8;
+    *(char*)(p+0x38) = 0x0;
+    *(char*)(p+0x39) = 0x1;
+    *(long*)(p+0x40) = 0xf6c6e8;
+    *(char*)(p+0x48) = 0x0;
+    *(int*)(p+0x4c) = 0x42c80000;
+    *(char*)(p+0x50) = 0x0;
+    *(char*)(p+0x51) = 0x0;
+    *(int*)(p+0x54) = 0x0;
+}
+// REVERSED_FUNCTION: dice_hfe_world_TargetCompTemplate_TargetCompTemplate (0x609520)

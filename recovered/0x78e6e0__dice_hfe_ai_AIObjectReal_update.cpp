@@ -1,0 +1,6 @@
+// FUNCTION: BF2 0x78e6e0
+namespace dice { namespace hfe { namespace world {
+extern void func_0x0078bf50(void*);
+void wrap_0x78e6e0(void* p) { func_0x0078bf50(p); }
+} } }
+// REVERSED_FUNCTION: dice_hfe_ai_AIObjectReal_update (0x78e6e0)

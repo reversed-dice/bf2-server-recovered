@@ -1,0 +1,11 @@
+// FUNCTION: BF2 0x6038b0
+typedef void* (*vfn48)(void*, void*);
+void* fn_0x6038b0(void* self) {
+    void* cached = *(void**)((char*)self + 0x68);
+    if (cached) return cached;
+    void* g = *(void**)0x112ee40;
+    void* r = ((vfn48)(*(void***)g)[0x48/8])(g, (char*)self + 0x60);
+    *(void**)((char*)self + 0x68) = r;
+    return r;
+}
+// REVERSED_FUNCTION: dice_hfe_world_LPTargetCompTemplate_getTargetObjectTemplate_const (0x6038b0)

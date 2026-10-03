@@ -1,0 +1,30 @@
+// FUNCTION: BF2 0x8b10a0
+// BF2_FLAGS: -fno-strict-aliasing
+#include <sstream>
+#include <string>
+
+namespace dice { namespace hfe {
+
+namespace {
+
+class ConsoleClass244 {
+public:
+    char  _pad0[0x38];
+    bool* m_arg;
+    void setArgFromString(int idx, const std::string& s);
+};
+
+void ConsoleClass244::setArgFromString(int idx, const std::string& s)
+{
+    if (idx != 1) {
+        return;
+    }
+    std::istringstream is(s, std::ios_base::in);
+    is >> *(bool*)0x10c6a28;
+    m_arg = (bool*)0x10c6a28;
+}
+
+}
+
+} }
+// REVERSED_FUNCTION: dice_hfe_anonymous_namespace_ConsoleClass244_setArgFromString_int_std_string_constref (0x8b10a0)

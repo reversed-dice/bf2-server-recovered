@@ -1,0 +1,9 @@
+// FUNCTION: BF2 0x6b13d0
+namespace dice { namespace hfe { namespace world {
+extern void func_0x004085b8(void*);
+void dtor_0x6b13d0(void* p) {
+    *(void**)p = (void*)0xb90a10;
+    func_0x004085b8(p);
+}
+} } }
+// REVERSED_FUNCTION: dice_anim_IAnimationSystemTemplateManager_dtor_IAnimationSystemTemplateManager (0x6b13d0)

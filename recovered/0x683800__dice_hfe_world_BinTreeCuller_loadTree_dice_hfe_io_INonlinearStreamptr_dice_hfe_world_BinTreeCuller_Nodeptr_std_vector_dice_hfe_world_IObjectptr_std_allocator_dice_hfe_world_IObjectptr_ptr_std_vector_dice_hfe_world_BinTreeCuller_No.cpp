@@ -1,0 +1,5 @@
+// FUNCTION: BF2 0x683800
+namespace dice { namespace hfe { namespace world {
+void empty_0x683800(void*) { }
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_BinTreeCuller_loadTree_dice_hfe_io_INonlinearStreamptr_dice_hfe_world_BinTreeCuller_Nodeptr_std_vector_dice_hfe_world_IObjectptr_std_allocator_dice_hfe_world_IObjectptr_ptr_std_vector_dice_hfe_world_BinTreeCuller_Nodeptr_std_allocator_dice_hfe_world_BinTreeCuller_Nodeptr_ptr (0x683800)

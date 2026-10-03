@@ -1,0 +1,3 @@
+// FUNCTION: BF2 0x426250
+struct C426250 { virtual ~C426250(); };
+C426250::~C426250() { }

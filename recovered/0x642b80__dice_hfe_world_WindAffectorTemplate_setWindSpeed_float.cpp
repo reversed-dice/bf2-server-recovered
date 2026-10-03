@@ -1,0 +1,11 @@
+// FUNCTION: BF2 0x642b80
+namespace dice { namespace hfe { namespace world {
+class Accessor {
+public:
+    unsigned char _pad[0x34];
+    float m_v;
+    void set(float v) { m_v = v; }
+};
+void set_0x642b80(Accessor* p, float v) { p->set(v); }
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_WindAffectorTemplate_setWindSpeed_float (0x642b80)
