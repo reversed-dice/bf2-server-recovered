@@ -1,0 +1,13 @@
+// FUNCTION: BF2 0x560760
+namespace dice { namespace hfe { namespace world {
+extern void base_0x005768d0(void* self);
+extern void del_0x004085b8(void* self);
+void dtor_560760(void* self) {
+    *(void**)self = (void*)0xb51650;
+    *(void**)((char*)self + 0x10) = (void*)0xb518e0;
+    *(void**)((char*)self + 0x68) = (void*)0xb51918;
+    *(void**)((char*)self + 0x1c8) = (void*)0xb51998;
+    base_0x005768d0(self);
+    del_0x004085b8(self);
+}
+} } }

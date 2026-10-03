@@ -1,0 +1,5 @@
+// FUNCTION: BF2 0x754610
+namespace dice { namespace hfe { namespace world {
+void empty_0x754610(void*) { }
+} } }
+// REVERSED_FUNCTION: dice_hfe_BfSoundNull_setShowStats_bool (0x754610)

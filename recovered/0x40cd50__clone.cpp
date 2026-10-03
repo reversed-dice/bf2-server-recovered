@@ -1,0 +1,11 @@
+// FUNCTION: BF2 0x40cd50
+namespace dice { namespace hfe { namespace world {
+class Accessor {
+public:
+    unsigned char _pad[0x8];
+    unsigned int m_v;
+    unsigned int get() { return m_v; }
+};
+unsigned int get_0x415750(Accessor* p) { return p->get(); }
+} } }
+// REVERSED_FUNCTION: dice_hfe_Game_getCurrentChannel__dice_hfe_Game_getCurrentChannel (0x415750)

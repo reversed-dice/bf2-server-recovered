@@ -1,0 +1,11 @@
+// FUNCTION: BF2 0x634600
+namespace dice { namespace hfe { namespace world {
+class Accessor {
+public:
+    unsigned char _pad[0x629];
+    bool m_v;
+    bool get() { return m_v; }
+};
+bool get_0x634600(Accessor* p) { return p->get(); }
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_EngineTemplate_getPureRotational_const (0x634600)

@@ -1,0 +1,16 @@
+// FUNCTION: BF2 0x41f7e0
+namespace dice { namespace hfe {
+extern void func_439a80(void*);
+extern void func_4085b8(void*);
+class BeginRoundEvent {
+public:
+    void* vtable;
+    void destroy();
+};
+void BeginRoundEvent::destroy() {
+    vtable = (void*)0xb2b3f0;
+    func_439a80(this);
+    func_4085b8(this);
+}
+} }
+// REVERSED_FUNCTION: dice_hfe_BeginRoundEvent_dtor_BeginRoundEvent (0x41f7e0)

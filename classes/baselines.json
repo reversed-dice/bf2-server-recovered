@@ -1,0 +1,62 @@
+{
+ "dice_hfe_ClientGameLogic": {
+  "ok": 22,
+  "total": 30
+ },
+ "dice_hfe_GameEventMakerMaker": {
+  "ok": 0,
+  "total": 13
+ },
+ "dice_hfe_GameLogic": {
+  "ok": 62,
+  "total": 93
+ },
+ "dice_hfe_GameServer": {
+  "ok": 26,
+  "total": 40
+ },
+ "dice_hfe_Player": {
+  "ok": 78,
+  "total": 90
+ },
+ "dice_hfe_ServerConnection": {
+  "ok": 1,
+  "total": 2
+ },
+ "dice_hfe_world_ArmorGLCompTemplate": {
+  "ok": 1,
+  "total": 1
+ },
+ "dice_hfe_world_ControlPointTemplate": {
+  "ok": 36,
+  "total": 45
+ },
+ "dice_hfe_world_FreeCamera": {
+  "ok": 47,
+  "total": 59
+ },
+ "dice_hfe_world_IPlayer": {
+  "ok": 0,
+  "total": 0
+ },
+ "dice_hfe_world_PlayerControlObjectTemplate": {
+  "ok": 24,
+  "total": 33
+ },
+ "dice_hfe_world_RecoilComp": {
+  "ok": 28,
+  "total": 32
+ },
+ "dice_hfe_world_ScoreManager": {
+  "ok": 3,
+  "total": 3
+ },
+ "dice_hfe_world_Soldier": {
+  "ok": 44,
+  "total": 54
+ },
+ "dice_hfe_world_VehicleHudCompTemplate": {
+  "ok": 12,
+  "total": 12
+ }
+}

@@ -1,0 +1,16 @@
+// FUNCTION: BF2 0x44ac70
+// BF2_FLAGS: -fno-strict-aliasing
+// std::_Deque_base<std::vector<dice::hfe::GhostManager::GhostSaveBufferEntry, std::allocator<dice::hfe::GhostManager::GhostSaveBufferEntry> >*, std::allocator<std::vector<dice::hfe::GhostManager::GhostSaveBufferEntry, std::allocator<dice::hfe::GhostManager::GhostSaveBufferEntry> >*> >
+
+#include <map>
+#include <set>
+#include <vector>
+#include <deque>
+#include <list>
+#include <string>
+#include <algorithm>
+#include <utility>
+
+namespace dice { namespace hfe { namespace GhostManager { struct GhostSaveBufferEntry { void* p; ~GhostSaveBufferEntry(); }; } } }
+
+template class std::_Deque_base<std::vector<dice::hfe::GhostManager::GhostSaveBufferEntry, std::allocator<dice::hfe::GhostManager::GhostSaveBufferEntry> >*, std::allocator<std::vector<dice::hfe::GhostManager::GhostSaveBufferEntry, std::allocator<dice::hfe::GhostManager::GhostSaveBufferEntry> >*> >;

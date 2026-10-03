@@ -1,0 +1,5 @@
+// FUNCTION: BF2 0x6f87a0
+namespace dice { namespace hfe { namespace world {
+void empty_0x6f87a0(void*) { }
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_StaticPhysicsNode_reset_bool (0x6f87a0)

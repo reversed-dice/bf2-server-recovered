@@ -1,0 +1,5 @@
+// FUNCTION: BF2 0x5ae5b0
+namespace dice { namespace hfe { namespace world {
+unsigned int get_0x5ae5b0(void*) { return *(unsigned int*)0x00c75e5c; }
+} } }
+// REVERSED_FUNCTION: dice_hfe_world_AbilityGLComp_getInterfaceID_const (0x5ae5b0)

@@ -1,0 +1,10 @@
+// FUNCTION: BF2 0x818d90
+namespace dice { namespace hfe {
+extern void fn_8190e0(void* a);
+extern void fn_407ee8(void* a, void* b, int c, void* d) __attribute__((noreturn));
+void ghttpFreePost_0x818d90(void* self) {
+    if (!self)
+        fn_407ee8((void*)0xbb3b78, (void*)0xbb3498, 0x4fa, (void*)0xbb3405);
+    fn_8190e0(self);
+}
+} }

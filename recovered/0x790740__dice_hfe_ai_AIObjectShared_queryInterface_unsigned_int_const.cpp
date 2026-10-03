@@ -1,0 +1,8 @@
+// FUNCTION: BF2 0x790740
+namespace dice { namespace hfe {
+void* f_790740(void* self, unsigned int id) {
+    if (__builtin_expect(id == *(unsigned int*)0x00bb8fac, 1))
+        return self;
+    return __builtin_expect(id == *(unsigned int*)0x00ca1988, 0) ? self : 0;
+}
+} }

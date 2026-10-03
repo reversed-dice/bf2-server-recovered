@@ -1,0 +1,6 @@
+// FUNCTION: BF2 0xaf51c0
+namespace dice { namespace hfe {
+void sgs_af51c0() {
+    *(void**)0x01143000 = (void*)0xb980f0;
+}
+} }

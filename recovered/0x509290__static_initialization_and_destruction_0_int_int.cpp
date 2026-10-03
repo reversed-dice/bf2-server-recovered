@@ -1,0 +1,13 @@
+// FUNCTION: BF2 0x509290
+namespace dice { namespace hfe {
+extern void ctor_0x00407338(void* obj);
+extern void dtor_0x509280(void);
+extern void fn_0x004071c8(void* f, void* arg, void* dso);
+void static_init_509290(int prio, int flag) {
+    if (prio != 1) return;
+    if (flag == 0xffff) {
+    ctor_0x00407338((void*)0x108dd68);
+    fn_0x004071c8((void*)0x509280, 0, (void*)0xf66a88);
+    }
+}
+} }

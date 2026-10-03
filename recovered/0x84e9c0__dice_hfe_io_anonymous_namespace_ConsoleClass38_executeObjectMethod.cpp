@@ -1,0 +1,14 @@
+// FUNCTION: BF2 0x84e9c0
+namespace dice { namespace hfe { namespace io {
+extern void* fn_h_0084d9e0();
+typedef void (*vfn_setf)(void*, float);
+void* cb_84e9c0(void* p) {
+    if (*(int*)((char*)p + 0x30) != 1)
+        return 0;
+    float v = **(float**)((char*)p + 0x38);
+    *(char*)((char*)p + 0x108) = 0;
+    void* q = fn_h_0084d9e0();
+    (*(vfn_setf*)((char*)*(void**)q + 0x50))(q, v);
+    return 0;
+}
+} } }

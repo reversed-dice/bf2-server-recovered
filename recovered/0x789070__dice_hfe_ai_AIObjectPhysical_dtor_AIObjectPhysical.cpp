@@ -1,0 +1,16 @@
+// FUNCTION: BF2 0x789070
+extern "C" void fn_789f90(void* self);
+extern "C" void operator delete(void* p);
+
+extern "C" void fn_789070(void* self)
+{
+    void* q = *(void**)((char*)self + 0x10);
+    *(void**)self = (void*)0xba4910;
+    if (*(char*)((char*)q + 0x21) != 0) {
+        void* g = *(void**)0x10add68;
+        void** vt = *(void***)g;
+        ((void (*)(void*, int, void*))vt[0x31])(g, *(int*)((char*)self + 0x28), *(void**)((char*)self + 0x8));
+    }
+    fn_789f90(self);
+    operator delete(self);
+}

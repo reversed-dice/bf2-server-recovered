@@ -1,0 +1,11 @@
+name: commits
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  commits:
+    uses: reversed-dice/.github/.github/workflows/commits.yml@main
