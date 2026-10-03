@@ -4,7 +4,7 @@ C++ source of the Battlefield 2 Linux server (`bf2_l64.x86`), recovered
 function by function until it recompiles byte for byte with the period
 compilers (GCC 3.4 and 4.0).
 
-Progress: https://api.reversed-dice.lsro.fr/api/v1/public/progress.json
+Progress: `dice status`, or `GET /api/v1/public/progress.json` on the API.
 
 ## Contributing
 
