@@ -7,5 +7,7 @@
 - C++ only: no inline assembly, no `#include "..."`, no `#pragma`.
 - `validate` (the judge) byte-matches each changed file with the flags it
   declares; the API merges on it.
+  A pull request that touches `recovered/` and comes from another branch than
+  `submit/*` is squash-merged by `validate.yml` once it passes, branch deleted.
 - Commits carry `Submitted-by` / `Submitted-with` / `Submission-Id`, written
   by the API. No other trailer.
