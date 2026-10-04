@@ -4,10 +4,15 @@ name: validate
 # recovered/*.cpp may be added or modified, an address may not get a second
 # file, and every file must byte-match with the flags it declares (api
 # validate, in the deployed worker image: same code as the submissions).
-# The API merges on this check; nothing here merges.
+# Runs only when a pull request touches recovered/ (a change to anything else
+# has nothing to judge, and used to show up as a red check). The API merges its
+# own submit/* branches once this passes; the merge job below does the same for
+# any other branch of the repository, then deletes the branch.
 
 on:
   pull_request:
+    branches: [main]
+    paths: [recovered/**]
 
 permissions:
   contents: read
@@ -66,3 +71,25 @@ jobs:
         run: |
           { echo '```'; tail -c 60000 result.txt; echo '```'; } > comment.md
           gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+
+  merge:
+    needs: validate
+    # submit/* is the API's: it merges with the Submitted-by trailers.
+    if: ${{ !startsWith(github.head_ref, 'submit/') && github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: [self-hosted, rd, ci]
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Squash-merge and delete the branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          TITLE: ${{ github.event.pull_request.title }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          cc='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9._/-]+\))?!?: .+'
+          printf '%s' "$TITLE" | grep -Eq "$cc" || { echo "::error::PR title is not a Conventional Commit"; exit 1; }
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --delete-branch \
+            --match-head-commit "$HEAD_SHA" --subject "$TITLE (#$PR)"
