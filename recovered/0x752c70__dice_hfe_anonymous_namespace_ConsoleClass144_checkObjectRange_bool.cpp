@@ -1,0 +1,79 @@
+// FUNCTION: BF2 0x752c70
+namespace dice { namespace hfe { namespace {
+
+class ConsoleClass144 {
+public:
+    int checkObjectRange(bool p);
+    int pad0(bool p);
+    int pad1(bool p);
+    int pad2(bool p);
+    int pad3(bool p);
+    int pad4(bool p);
+};
+int ConsoleClass144::pad0(bool p) {
+    if (*(int*)((char*)this + 0x30) > 0) {
+        float* q = *(float**)((char*)this + 0x38);
+        if (*q < 0.0f) {
+            if (p) { *q = 0.0f; return 0; }
+        } else if (*q > 1.0f && p) {
+            *q = 1.0f;
+        }
+    }
+    return 0;
+}
+int ConsoleClass144::pad1(bool p) {
+    if (*(int*)((char*)this + 0x30) > 0) {
+        float* q = *(float**)((char*)this + 0x38);
+        if (*q < 0.0f) {
+            if (p) { *q = 0.0f; return 0; }
+        } else if (*q > 1.0f && p) {
+            *q = 1.0f;
+        }
+    }
+    return 0;
+}
+int ConsoleClass144::pad2(bool p) {
+    if (*(int*)((char*)this + 0x30) > 0) {
+        float* q = *(float**)((char*)this + 0x38);
+        if (*q < 0.0f) {
+            if (p) { *q = 0.0f; return 0; }
+        } else if (*q > 1.0f && p) {
+            *q = 1.0f;
+        }
+    }
+    return 0;
+}
+int ConsoleClass144::pad3(bool p) {
+    if (*(int*)((char*)this + 0x30) > 0) {
+        float* q = *(float**)((char*)this + 0x38);
+        if (*q < 0.0f) {
+            if (p) { *q = 0.0f; return 0; }
+        } else if (*q > 1.0f && p) {
+            *q = 1.0f;
+        }
+    }
+    return 0;
+}
+int ConsoleClass144::pad4(bool p) {
+    if (*(int*)((char*)this + 0x30) > 0) {
+        float* q = *(float**)((char*)this + 0x38);
+        if (*q < 0.0f) {
+            if (p) { *q = 0.0f; return 0; }
+        } else if (*q > 1.0f && p) {
+            *q = 1.0f;
+        }
+    }
+    return 0;
+}
+int ConsoleClass144::checkObjectRange(bool p) {
+    if (*(int*)((char*)this + 0x30) > 0) {
+        float* q = *(float**)((char*)this + 0x38);
+        if (*q < 0.0f) {
+            if (p) { *q = 0.0f; return 0; }
+        } else if (*q > 1.0f && p) {
+            *q = 1.0f;
+        }
+    }
+    return 0;
+}
+} } }
