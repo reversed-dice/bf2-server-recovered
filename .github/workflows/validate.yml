@@ -25,7 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          fetch-depth: 0
+          # The merge commit of the pull request: its two parents are the base
+          # and the head, all the job diffs. Full history cost 4 GB per runner.
+          fetch-depth: 2
 
       - name: Changed files
         env:
@@ -62,6 +64,10 @@ jobs:
             --read-only --tmpfs /tmp --cap-drop ALL --cap-add SETUID --cap-add SETGID \
             --security-opt no-new-privileges:true -e RD_COMPILE_UID=65534 \
             --entrypoint /api "rd-worker:$tag" validate $(cat files.txt) 2>&1 | tee result.txt
+
+      - name: Compact the workspace
+        if: always()
+        run: git gc --prune=now --quiet
 
       - name: Report on the pull request
         if: always() && hashFiles('result.txt') != ''
