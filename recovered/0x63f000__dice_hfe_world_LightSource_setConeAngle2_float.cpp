@@ -65,7 +65,7 @@ void dice::hfe::world::LightSource::setConeAngle2(float v)
 {
     if (v > 180.0f) {
         Debug(DEBUG_WARNING, std::string("Game/Objects/Visual/LightSource.cpp"), 360, std::string(""))
-            .stream() << "Light " << getName() << " coneAngle2>180, capped to 180.";
+            .stream() << "Light " << getName() << " coneAngle2 >180, capped to 180.";
         v = 180.0f;
     }
     m_cone2 = v;

@@ -6,7 +6,7 @@ extern "C" void gpiAppendIntToBuffer(void* conn, void* buffer, int value);
 int gpiSendGetInfo(void* connection, int profileId, int id) {
     void* conn = *(void**)connection;
     char* buffer = (char*)conn + 0x268;
-    gpiAppendStringToBuffer(connection, buffer, "\\getprofile\\sesskey\\");
+    gpiAppendStringToBuffer(connection, buffer, "\\getprofile\\\\sesskey\\");
     gpiAppendIntToBuffer(connection, buffer, *(int*)((char*)conn + 0x198));
     gpiAppendStringToBuffer(connection, buffer, "\\profileid\\");
     gpiAppendIntToBuffer(connection, buffer, profileId);
