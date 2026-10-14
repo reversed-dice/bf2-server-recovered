@@ -19,7 +19,7 @@ extern "C" std::string hasBundledType_853130(const std::string& a, const std::st
     std::string s;
     void* p = dice::hfe::io::getConsoleObject_853130(*(void**)0x00f6c690, a, b);
     if (p == 0)
-        return std::string("ERROR:Objectnameor/andfunctionnameareinvalide");
+        return std::string("ERROR: Objectname or/and functionname are invalide");
     if ((*(dice::hfe::io::hasfn_853130*)(*(char**)p + 0x98))(p))
         s.append("1", 1);
     else

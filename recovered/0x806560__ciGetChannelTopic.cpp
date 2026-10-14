@@ -27,7 +27,7 @@ extern "C" const char * ciGetChannelTopic(CHAT chat, const char * channel)
 		__assert_fail("channel != ((void *)0)", "External/GameSpy/chat/chatChannel.c", 686, __PRETTY_FUNCTION__);
 	}
 	if (!(channel[0] != '\0')) {
-		__assert_fail("channel[0] != '\0'", "External/GameSpy/chat/chatChannel.c", 686, __PRETTY_FUNCTION__);
+		__assert_fail("channel[0] != '\\0'", "External/GameSpy/chat/chatChannel.c", 686, __PRETTY_FUNCTION__);
 	}
 	if (!(strlen(channel) < MAX_CHANNEL)) {
 		__assert_fail("strlen(channel) < 257", "External/GameSpy/chat/chatChannel.c", 686, __PRETTY_FUNCTION__);
