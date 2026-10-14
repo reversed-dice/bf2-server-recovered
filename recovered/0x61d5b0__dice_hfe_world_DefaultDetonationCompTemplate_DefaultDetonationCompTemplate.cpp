@@ -1,0 +1,68 @@
+// FUNCTION: BF2 0x61d5b0
+namespace dice { namespace hfe { namespace world {
+struct Vec3 { float x, y, z; };
+void ctor_61d410(void* self) {
+    char* s = (char*)self;
+    Vec3* v = (Vec3*)(s + 0x90);
+    *(void**)s = (void*)0xb7cff0;
+    *(void**)(s + 0x8) = (void*)0xb7d080;
+    *(int*)(s + 0x10) = 1;
+    *(void**)(s + 0x18) = (void*)0xf6c6e8;
+    *(void**)(s + 0x20) = 0;
+    *(void**)(s + 0x28) = (void*)0xf6c6e8;
+    *(void**)(s + 0x30) = 0;
+    *(char*)(s + 0x38) = 0;
+    *(int*)(s + 0x3c) = -1;
+    *(float*)(s + 0x40) = 150.0f;
+    *(float*)(s + 0x44) = 1.0f;
+    *(float*)(s + 0x48) = 10.0f;
+    *(float*)(s + 0x4c) = 0.0f;
+    *(float*)(s + 0x50) = 0.0f;
+    *(float*)(s + 0x54) = 0.0f;
+    *(float*)(s + 0x58) = 0.0f;
+    *(float*)(s + 0x5c) = 0.0005f;
+    *(float*)(s + 0x60) = 0.3f;
+    *(float*)(s + 0x64) = 0.0f;
+    *(float*)(s + 0x68) = 500.0f;
+    *(float*)(s + 0x6c) = 2.0f;
+    *(float*)(s + 0x70) = 0.0f;
+    *(float*)(s + 0x74) = 0.0f;
+    *(float*)(s + 0x78) = 0.0f;
+    *(float*)(s + 0x7c) = 1.5f;
+    *(char*)(s + 0x80) = 0;
+    *(char*)(s + 0x81) = 0;
+    *(char*)(s + 0x82) = 0;
+    *(float*)(s + 0x84) = 0.0f;
+    *(int*)(s + 0x88) = 0;
+    *(char*)(s + 0x8c) = 1;
+    *(char*)(s + 0x8d) = 1;
+    *(float*)(s + 0x9c) = 0.0f;
+    *(float*)(s + 0xa0) = 0.0f;
+    *(float*)(s + 0xa4) = 0.5f;
+    *(float*)(s + 0xa8) = 1.0f;
+    *(float*)(s + 0xac) = 0.12f;
+    *(float*)(s + 0xb0) = 2.0f;
+    *(float*)(s + 0xb4) = 6.0f;
+    *(float*)(s + 0xb8) = 2.0f;
+    *(float*)(s + 0xbc) = 6.0f;
+    *(float*)(s + 0xc0) = 0.5f;
+    *(float*)(s + 0xc4) = 1.0f;
+    *(float*)(s + 0xc8) = 0.02f;
+    *(float*)(s + 0xcc) = 1.0f;
+    *(float*)(s + 0xd0) = 5.0f;
+    *(float*)(s + 0xd4) = 1.0f;
+    *(float*)(s + 0xd8) = 5.0f;
+    *(float*)(s + 0xdc) = 0.96f;
+    *(float*)(s + 0xe0) = 1.0f;
+    *(float*)(s + 0xe4) = 0.02f;
+    *(float*)(s + 0xe8) = 2.0f;
+    *(float*)(s + 0xec) = 10.0f;
+    *(float*)(s + 0xf0) = 2.0f;
+    *(float*)(s + 0xf4) = 10.0f;
+    *(char*)(s + 0xf8) = 0;
+    *(float*)(s + 0xfc) = 0.0f;
+    v->x = 0.0f;
+    v->y = 0.0f;
+    v->z = 0.0f;
+}
+} } }
