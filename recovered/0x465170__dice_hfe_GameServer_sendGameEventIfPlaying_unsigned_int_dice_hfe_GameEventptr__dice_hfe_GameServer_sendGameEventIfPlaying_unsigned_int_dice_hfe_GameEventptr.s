@@ -1,8 +1,0 @@
-.intel_syntax noprefix
-.text
-.globl _ZN4dice3hfe10GameServer22sendGameEventIfPlayingEjPN4dice3hfe9GameEventE
-_ZN4dice3hfe10GameServer22sendGameEventIfPlayingEjPN4dice3hfe9GameEventE:
-mov r8d, 0x1
-mov ecx, 0x1
-jmp 0x453f30
-# REVERSED_FUNCTION: dice_hfe_GameServer_sendGameEventIfPlaying_unsigned_int_dice_hfe_GameEventptr (0x465170)
