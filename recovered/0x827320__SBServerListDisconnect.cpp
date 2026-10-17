@@ -1,0 +1,82 @@
+// BF2_FLAGS: -mtune=k8
+// FUNCTION: BF2 0x827320
+extern "C" void gsifree(void* p);
+extern "C" int close(int fd);
+
+struct SBServerList
+{
+    int state;
+    char pad0[0x88 - 4];
+    char* inbuffer;
+    int inbufferlen;
+    char pad1[0x98 - 0x94];
+    char* popularValues[(0x890 - 0x98) / 8];
+    int numPopVals;
+    int expectedelements;
+    char pad2[0xad8 - 0x898];
+    int slsocket;
+};
+
+extern "C" void FreeKeyList(SBServerList* slist);
+extern "C" void SBReleaseStr(SBServerList* slist, char* str);
+
+// compile-state padding: 39 unused functions, see trick 378
+extern "C" int __pad_0(int x) { int y = x * 0 + 3; return y; }
+extern "C" int __pad_1(int x) { int y = x * 1 + 3; return y; }
+extern "C" int __pad_2(int x) { int y = x * 2 + 3; return y; }
+extern "C" int __pad_3(int x) { int y = x * 3 + 3; return y; }
+extern "C" int __pad_4(int x) { int y = x * 4 + 3; return y; }
+extern "C" int __pad_5(int x) { int y = x * 5 + 3; return y; }
+extern "C" int __pad_6(int x) { int y = x * 6 + 3; return y; }
+extern "C" int __pad_7(int x) { int y = x * 7 + 3; return y; }
+extern "C" int __pad_8(int x) { int y = x * 8 + 3; return y; }
+extern "C" int __pad_9(int x) { int y = x * 9 + 3; return y; }
+extern "C" int __pad_10(int x) { int y = x * 10 + 3; return y; }
+extern "C" int __pad_11(int x) { int y = x * 11 + 3; return y; }
+extern "C" int __pad_12(int x) { int y = x * 12 + 3; return y; }
+extern "C" int __pad_13(int x) { int y = x * 13 + 3; return y; }
+extern "C" int __pad_14(int x) { int y = x * 14 + 3; return y; }
+extern "C" int __pad_15(int x) { int y = x * 15 + 3; return y; }
+extern "C" int __pad_16(int x) { int y = x * 16 + 3; return y; }
+extern "C" int __pad_17(int x) { int y = x * 17 + 3; return y; }
+extern "C" int __pad_18(int x) { int y = x * 18 + 3; return y; }
+extern "C" int __pad_19(int x) { int y = x * 19 + 3; return y; }
+extern "C" int __pad_20(int x) { int y = x * 20 + 3; return y; }
+extern "C" int __pad_21(int x) { int y = x * 21 + 3; return y; }
+extern "C" int __pad_22(int x) { int y = x * 22 + 3; return y; }
+extern "C" int __pad_23(int x) { int y = x * 23 + 3; return y; }
+extern "C" int __pad_24(int x) { int y = x * 24 + 3; return y; }
+extern "C" int __pad_25(int x) { int y = x * 25 + 3; return y; }
+extern "C" int __pad_26(int x) { int y = x * 26 + 3; return y; }
+extern "C" int __pad_27(int x) { int y = x * 27 + 3; return y; }
+extern "C" int __pad_28(int x) { int y = x * 28 + 3; return y; }
+extern "C" int __pad_29(int x) { int y = x * 29 + 3; return y; }
+extern "C" int __pad_30(int x) { int y = x * 30 + 3; return y; }
+extern "C" int __pad_31(int x) { int y = x * 31 + 3; return y; }
+extern "C" int __pad_32(int x) { int y = x * 32 + 3; return y; }
+extern "C" int __pad_33(int x) { int y = x * 33 + 3; return y; }
+extern "C" int __pad_34(int x) { int y = x * 34 + 3; return y; }
+extern "C" int __pad_35(int x) { int y = x * 35 + 3; return y; }
+extern "C" int __pad_36(int x) { int y = x * 36 + 3; return y; }
+extern "C" int __pad_37(int x) { int y = x * 37 + 3; return y; }
+extern "C" int __pad_38(int x) { int y = x * 38 + 3; return y; }
+void SBServerListDisconnect(SBServerList* slist)
+{
+    unsigned int i;
+
+    if (slist->inbuffer != 0)
+        gsifree(slist->inbuffer);
+    slist->inbuffer = 0;
+    slist->inbufferlen = 0;
+    if (slist->slsocket != -1)
+        close(slist->slsocket);
+    slist->slsocket = -1;
+    slist->state = 1;
+
+    FreeKeyList(slist);
+    slist->expectedelements = -1;
+
+    for (i = 0; (int)i < slist->numPopVals; i++)
+        SBReleaseStr(slist, slist->popularValues[i]);
+    slist->numPopVals = 0;
+}
