@@ -1,0 +1,115 @@
+// BF2_FLAGS: -fno-strict-aliasing
+// TRICK: 62
+// TRICK: 75
+// FUNCTION: BF2 0x5b6050
+namespace dice { namespace hfe { namespace world {
+
+void eom_5b6050(char* self) {
+    char* a = self + 0x18;
+    char* b = self + 0x20;
+    *(long* volatile*)(self) = (long*)0xb67270;
+    *(long* volatile*)(self + 0x8) = (long*)0xb67568;
+    *(volatile int*)(self + 0x10) = 1;
+    *(volatile char*)(self + 0x14) = 1;
+    *(volatile char*)(self + 0x15) = 0;
+    *(long* volatile*)(a + 0x8) = 0;
+    *(long* volatile*)(a + 0x10) = 0;
+    *(volatile int*)(a + 0x8) = 0;
+    *(char** volatile*)(a + 0x20) = (char**)b;
+    *(char** volatile*)(a + 0x18) = (char**)b;
+    *(long* volatile*)(a + 0x28) = 0;
+    char* d = self + 0x50;
+    char* c = self + 0x48;
+    *(long* volatile*)(c + 0x8) = 0;
+    *(long* volatile*)(c + 0x10) = 0;
+    *(volatile int*)(c + 0x8) = 0;
+    *(char** volatile*)(c + 0x20) = (char**)d;
+    *(char** volatile*)(c + 0x18) = (char**)d;
+    *(long* volatile*)(c + 0x28) = 0;
+    char* v78 = self + 0x78;
+    *(long* volatile*)(self + 0x78) = 0;
+    *(long* volatile*)(v78 + 0x8) = 0;
+    *(long* volatile*)(v78 + 0x10) = 0;
+    char* v90 = self + 0x90;
+    *(long* volatile*)(self + 0x90) = 0;
+    *(long* volatile*)(self + 0xa0) = 0;
+    *(volatile int*)(v90 + 0x8) = 0;
+    *(volatile int*)(self + 0xa8) = 0;
+    *(long* volatile*)(v90 + 0x20) = 0;
+    char* vb8 = self + 0xb8;
+    *(long* volatile*)(self + 0xb8) = 0;
+    *(long* volatile*)(self + 0xd0) = 0;
+    *(long* volatile*)(vb8 + 0x8) = 0;
+    *(long* volatile*)(vb8 + 0x10) = 0;
+    char* vd0 = self + 0xd0;
+    *(long* volatile*)(vd0 + 0x8) = 0;
+    *(long* volatile*)(vd0 + 0x10) = 0;
+    char* ve8 = self + 0xe8;
+    *(long* volatile*)(self + 0xe8) = 0;
+    *(long* volatile*)(ve8 + 0x8) = 0;
+    *(long* volatile*)(ve8 + 0x10) = 0;
+    char* v100 = self + 0x100;
+    *(long* volatile*)(self + 0x100) = 0;
+    *(long* volatile*)(v100 + 0x8) = 0;
+    *(long* volatile*)(v100 + 0x10) = 0;
+    char* v118 = self + 0x118;
+    *(long* volatile*)(self + 0x118) = 0;
+    *(long* volatile*)(self + 0x130) = 0;
+    *(long* volatile*)(v118 + 0x8) = 0;
+    *(long* volatile*)(v118 + 0x10) = 0;
+    char* v130 = self + 0x130;
+    *(long* volatile*)(v130 + 0x8) = 0;
+    *(long* volatile*)(v130 + 0x10) = 0;
+    char* v148 = self + 0x148;
+    *(long* volatile*)(self + 0x148) = 0;
+    *(long* volatile*)(v148 + 0x8) = 0;
+    *(long* volatile*)(v148 + 0x10) = 0;
+    float z;
+    *(unsigned*)&z = 0;
+    float one = 1.0f;
+    float ten = 10.0f;
+    *(float*)(self + 0x178) = z;
+    *(float*)(self + 0x184) = z;
+    *(float*)(self + 0x188) = z;
+    *(float*)(self + 0x190) = z;
+    *(float*)(self + 0x19c) = z;
+    *(float*)(self + 0x1a0) = z;
+    *(float*)(self + 0x1a8) = z;
+    *(int*)(self + 0x160) = (int)0xbf800000u;
+    *(float*)(self + 0x164) = ten;
+    *(float*)(self + 0x168) = ten;
+    *(float*)(self + 0x16c) = ten;
+    *(float*)(self + 0x170) = ten;
+    *(float*)(self + 0x174) = one;
+    *(float*)(self + 0x17c) = one;
+    *(int*)(self + 0x180) = -1;
+    *(int*)(self + 0x18c) = 0;
+    *(float*)(self + 0x194) = one;
+    *(float*)(self + 0x198) = ten;
+    *(int*)(self + 0x1a4) = 0;
+    *(float*)(self + 0x1ac) = one;
+    *(volatile int*)(self + 0x1b0) = (int)0x42c80000u;
+    *(float*)(self + 0x1b4) = one;
+    *(float*)(self + 0x1b8) = z;
+    *(float*)(self + 0x1bc) = z;
+    *(float*)(self + 0x1c0) = z;
+    *(float*)(self + 0x1d8) = z;
+    *(float*)(self + 0x1e4) = z;
+    *(float*)(self + 0x1e8) = z;
+    char* v1f0 = self + 0x1f0;
+    *(volatile int*)(self + 0x1c4) = (int)0x40400000u;
+    *(float*)(self + 0x1c8) = one;
+    *(volatile int*)(self + 0x1cc) = (int)0xbe99999au;
+    *(float*)(self + 0x1d0) = one;
+    *(volatile char*)(self + 0x1d4) = 0;
+    *(volatile int*)(self + 0x1e0) = (int)0x41a00000u;
+    *(volatile char*)(self + 0x1ec) = 0;
+    *(volatile char*)(self + 0x1ed) = 0;
+    *(volatile char*)(self + 0x1ee) = 1;
+    *(volatile char*)(self + 0x1ef) = 1;
+    *(long* volatile*)(self + 0x1f0) = 0;
+    *(long* volatile*)(v1f0 + 0x8) = 0;
+    *(long* volatile*)(v1f0 + 0x10) = 0;
+}
+
+} } }
