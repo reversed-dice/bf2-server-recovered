@@ -11,3 +11,4 @@ int _init() {
     int __perm_pad6 = 6; (void)__perm_pad6;
     return __perm_t;
 }
+
