@@ -8,7 +8,8 @@ name: validate
 # automation that opened them; the merge job below does the same for any other
 # branch of this repository, then deletes the branch.
 #
-# Runner labels, paths and the worker image come from repository variables.
+# Runner labels come from repository variables. The runners are ephemeral
+# containers built on the deployed worker image: one job each, then thrown away.
 
 # pull_request_target: the workflow file always comes from main, so a pull
 # request cannot change what runs on the self-hosted runners. Only pull requests
@@ -62,24 +63,14 @@ jobs:
           exit "$bad"
 
       - name: Byte-match
-        env:
-          WORKER_DIR: ${{ vars.RD_WORKER_DIR }}
-          TOOLCHAINS_DIR: ${{ vars.RD_TOOLCHAINS_DIR }}
-          WORKER_NETWORK: ${{ vars.RD_WORKER_NETWORK }}
-          WORKER_IMAGE: ${{ vars.RD_WORKER_IMAGE }}
-          WORKER_ENTRYPOINT: ${{ vars.RD_WORKER_ENTRYPOINT }}
         run: |
           set -euo pipefail
-          for v in WORKER_DIR TOOLCHAINS_DIR WORKER_NETWORK WORKER_IMAGE WORKER_ENTRYPOINT; do
-            [ -n "${!v}" ] || { echo "::error::repository variable for $v is not set"; exit 1; }
-          done
-          tag=$(cat "$WORKER_DIR/current_tag")
+          # The job runs in the worker image (same api binary and toolchains
+          # as the submissions), in an ephemeral container with no Docker
+          # socket. The database credential is in the job environment.
+          export RD_COMPILE_UID=65534
           # shellcheck disable=SC2046
-          docker run --rm --network "$WORKER_NETWORK" --env-file "$WORKER_DIR/.env" \
-            -v "$TOOLCHAINS_DIR":/toolchains:ro -v "$PWD":/src:ro -w /src \
-            --read-only --tmpfs /tmp --cap-drop ALL --cap-add SETUID --cap-add SETGID \
-            --security-opt no-new-privileges:true -e RD_COMPILE_UID=65534 \
-            --entrypoint "$WORKER_ENTRYPOINT" "$WORKER_IMAGE:$tag" validate $(cat files.txt) 2>&1 | tee result.txt
+          /api validate $(cat files.txt) 2>&1 | tee result.txt
 
       - name: Compact the workspace
         if: always()
