@@ -20,6 +20,8 @@ permissions:
 
 jobs:
   validate:
+    # Pull requests from forks never reach the self-hosted runner.
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: [self-hosted, rd, validate]
     timeout-minutes: 60
     steps:
