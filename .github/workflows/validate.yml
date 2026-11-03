@@ -10,8 +10,12 @@ name: validate
 #
 # Runner labels, paths and the worker image come from repository variables.
 
+# pull_request_target: the workflow file always comes from main, so a pull
+# request cannot change what runs on the self-hosted runners. Only pull requests
+# from this repository are judged (see the if below), and they are checked out
+# explicitly.
 on:
-  pull_request:
+  pull_request_target:
     branches: [main]
     paths: [recovered/**]
 
@@ -28,6 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
           # The merge commit of the pull request: its two parents are the base
           # and the head, all the job diffs. Full history cost 4 GB per runner.
           fetch-depth: 2

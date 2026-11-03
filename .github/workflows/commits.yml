@@ -8,13 +8,13 @@ permissions:
   contents: read
 
 # Checks every commit of a pull request: Conventional Commits subject and no
-# automated attribution trailer. Pull requests from forks run on a hosted
-# runner; the runner of the repository comes from a repository variable.
+# automated attribution trailer. Runs on a hosted runner only: a pull request
+# can change this file, so it never gets a self-hosted runner.
 
 jobs:
   commits:
     name: commits / conventional commits
-    runs-on: ${{ fromJSON(vars.RD_CI_RUNNER || '"ubuntu-latest"') }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
