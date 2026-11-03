@@ -21,7 +21,6 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   validate:
@@ -86,14 +85,10 @@ jobs:
         if: always()
         run: git gc --prune=now --quiet
 
-      - name: Report on the pull request
+      - name: Report in the job summary
         if: always() && hashFiles('result.txt') != ''
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR: ${{ github.event.pull_request.number }}
         run: |
-          { echo '```'; tail -c 60000 result.txt; echo '```'; } > comment.md
-          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+          { echo '```'; tail -c 60000 result.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
   merge:
     needs: validate
