@@ -1,0 +1,9 @@
+name: rt
+on: pull_request
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: [self-hosted, rd, isolated]
+    steps:
+      - run: echo should-not-run
