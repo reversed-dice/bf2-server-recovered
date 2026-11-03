@@ -7,3 +7,4 @@ unsigned long get_current_thread_id() {
     int __perm_pad1 = 1; (void)__perm_pad1;
     return __perm_t;
 }
+
