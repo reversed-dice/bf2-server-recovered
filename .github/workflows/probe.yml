@@ -1,0 +1,9 @@
+name: probe
+on:
+  pull_request:
+jobs:
+  probe:
+    runs-on: [self-hosted, rd, validate]
+    timeout-minutes: 5
+    steps:
+      - run: echo "probe ran on a self-hosted runner"
