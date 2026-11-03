@@ -9,3 +9,4 @@ void call_gmon_start()
         gmon_start();
     }
 }
+
